@@ -1,6 +1,12 @@
 const signUpForm = document.querySelector("#new-account")
 const loginForm = document.querySelector("#login-user")
 const loginButton = document.querySelector("#login-button")
+const nasaLink = document.querySelector("#nasa")
+
+const astroApiKey = "b17e8b59f8924d6585b40d01141a04b3"
+const nasaApiKey = "LgC3ecRJ9ybPzqQJc5K9cxwBc0Xa7RLnFGwGqMXj"
+
+let address = "colorado"
 
 const baseURL = "http://localhost:3000"
 let token = localStorage.token
@@ -60,13 +66,41 @@ function login(event) {
 }
 
 function authorizeUser(token) {
-    fetch(`${baseURL}/profile` {
+    fetch(`${baseURL}/profile`, {
         method: "GET",
         headers: {
             "content-type": "application/json",
             "Authorization": `Bearer ${token}`
         }
-    }).then(response => response.json(0))
+    }).then(response => response.json())
     .then(console.log)
 }
 
+function logout() {
+    localStorage.removeItem("token")
+}
+
+const stars = document.querySelector(".stars")
+function getRandomInt() {
+    return Math.floor(Math.random() * Math.floor(5));
+  }
+
+// fetch(`https://api.ipgeolocation.io/astronomy?apiKey=${astroApiKey}&location=${address}`)
+//     .then(response => response.json())
+//     .then(result => console.log(result))
+
+// fetch(`https://api.nasa.gov/planetary/apod?api_key=${nasaApiKey}`)
+// .then(response => response.json())
+// .then(result => { 
+//     console.log(result)
+//     const video = document.createElement("iframe")
+//     video.width = "400"
+//     video.height = "400"
+   
+//     video.src = result.url 
+//     console.log(video.src)
+
+    
+//     nasaLink.appendChild(video)
+
+// })
