@@ -12,16 +12,43 @@
 
     <nav id="navigationBar">
         <ul class="active">
-            <li><i class="fa fa-home" aria-hidden="true"></i>HOME </li>
+            <li id="home"><i class="fa fa-home" aria-hidden="true"></i>HOME </li>
             <li> <i class="fa fa-user-circle-o" aria-hidden="true"></i>PROFILE </li>
             <li> <i class="fa fa-user-plus" aria-hidden="true"></i>SIGN UP </li>
             <li><i class="fa fa-sign-in" aria-hidden="true"></i>SIGN IN </li>   
+            <li><i class="fa fa-compress" aria-hidden="true"></i>CONTACT </li>   
         </ul>
         <ul class="sign-up">
             <li>LOG OUT</li>
         </ul>
     </nav>
-    <p>THIS IS SKYGAZER HOMEPAGE!</p>
+
+    <section class="planets-body">
+        <section class="introduction">
+            <h1>WELCOME TO SKYGAZER HOMEPAGE!</h1>
+            <br>
+            <p>The San Diego Loyal walked off the field in protest Wednesday night, saying a Phoenix Rising player used an anti-gay slur directed at midfielder Collin Martin in the first half of their USL Championship match.
+            </p>
+
+            <br>
+            <div id="nasa-daily-video"></div>
+        </section>
+
+        
+        <section class="planet-info">
+            <div class="pop-up" id="pop">
+                <div class="pop-header">
+                    <div class="title"></div>
+                    <div class="close-button"><i class="fa fa-window-close-o" aria-hidden="true"></i></div>
+                </div>
+                <div class="pop-body">Sanjeev will be the greatest software engineer!</div>
+            </div>       
+        </section>
+    </section>
+
+
+   
+    
    
     <!-- <form id="new-account">
         <h1>Sign Up</h1>
@@ -44,22 +71,23 @@
    
    
    <section>
-       <div class="star stars">
+       <div class="star stars" id="star-container">
            <div id="stars1"></div>
            <div id="stars2"></div>
        </div>
        <div class="star sun"></div>
-       <div class="planet mercury"></div>
+       <div class="planet mercury" id="mercury-1"></div>
        <div class="orbit orbit-mercury"></div>
-       <div class="planet venus"></div>
+       <div class="planet venus" id="venus-1"></div>
        <div class="orbit orbit-venus"></div>
-       <div class="planet earth">
+       <div class="planet earth" id="earth-1">
+           <!-- <button class="earth-button"></button> -->
             <div class="moon-orbit", id="moon"></div>
        </div>
        <div class="orbit orbit-earth"></div>
-       <div class="planet mars"></div>
+       <div class="planet mars" id="mars-1"></div>
        <div class="orbit orbit-mars"></div>
-       <div class="planet jupiter">
+       <div class="planet jupiter" id="jupiter-1">
         <div class="moon-orbit" id="jupiter-moon1"></div>
         <div class="moon-orbit" id="jupiter-moon2"></div>
         <div class="moon-orbit" id="jupiter-moon3"></div>
@@ -96,20 +124,20 @@
            <div class="orbit asteroid28"></div>
            <div class="orbit asteroid29"></div>
            <div class="orbit asteroid30"></div>
-       <div class="planet saturn"></div>
+       <div class="planet saturn" id="saturn-1"></div>
        <div class="orbit orbit-saturn"></div>
-       <div class="planet uranus">
+       <div class="planet uranus" id="uranus-1">
         <div class="moon-orbit" id="uranus-moon1"></div>
         <div class="moon-orbit" id="uranus-moon2"></div>
         <div class="moon-orbit" id="uranus-moon3"></div>
        </div>
        <div class="orbit orbit-uranus"></div>
-       <div class="planet neptune">
+       <div class="planet neptune" id="neptune-1">
         <div class="moon-orbit" id="neptune-moon1"></div>
         <div class="moon-orbit" id="neptune-moon2"></div>
        </div>
        <div class="orbit orbit-neptune"></div>
-       <div class="planet pluto"></div>
+       <div class="planet pluto" id="pluto-1"></div>
        <div class="orbit orbit-pluto"></div>
    </section>
 
