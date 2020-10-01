@@ -80,10 +80,16 @@ function logout() {
     localStorage.removeItem("token")
 }
 
-const stars = document.querySelector(".stars")
-function getRandomInt() {
-    return Math.floor(Math.random() * Math.floor(5));
-  }
+// const asteroidContainer = document.querySelector(".orbit")
+// function asteroidGenerator() {  
+//     for(let i = 0; i < 200; i++) {
+//         let div = document.createElement("div")
+//         div.classList.add(`orbit-child`)
+//         asteroidContainer.appendChild(div)
+//     } 
+//     console.log(asteroidContainer)
+//   }
+//   asteroidGenerator()
 
 // fetch(`https://api.ipgeolocation.io/astronomy?apiKey=${astroApiKey}&location=${address}`)
 //     .then(response => response.json())
