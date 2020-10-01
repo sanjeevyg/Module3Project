@@ -87,9 +87,9 @@ nav#navigationBar ul li {
      font-size: 23px;
  }
 
+ /* ..................................................................... */
+
  .planets-body {
-     /* position: absolute; */
-     /* background: red; */
      display: flex;
      flex-direction: row;
      justify-content: space-between;
@@ -98,9 +98,38 @@ nav#navigationBar ul li {
  .planet-info {
     margin-top: 100px;
     font-family: De-Valencia;
-    font-size: 20px;
+    font-size: 30px;
     color: white;
-    width: 400px;
+    width: 300px;
+    margin-right: 0px;
+    padding-right: 40px;
+ }
+
+ .pop-up {
+     position: fixed;
+     z-index: 10;
+     /* background: grey; */
+     transform: scale(0);
+ }
+
+ .pop-header {
+     display: flex;
+     justify-content: space-between;
+     /* align-items: center; */
+     padding-bottom: 60px;
+ }
+
+ .pop-body {
+     font-size: 20px;
+ }
+
+ .pop-body div {
+    padding: 10px;
+}
+
+
+ .close-button {
+     cursor: pointer;
  }
 
         

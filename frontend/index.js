@@ -105,16 +105,6 @@ function logout() {
     localStorage.removeItem("token")
 }
 
-// const asteroidContainer = document.querySelector(".orbit")
-// function asteroidGenerator() {  
-//     for(let i = 0; i < 200; i++) {
-//         let div = document.createElement("div")
-//         div.classList.add(`orbit-child`)
-//         asteroidContainer.appendChild(div)
-//     } 
-//     console.log(asteroidContainer)
-//   }
-//   asteroidGenerator()
 
 function riseFallData() {
     fetch(`https://api.ipgeolocation.io/astronomy?apiKey=${astroApiKey}&location=${address}`)
@@ -146,15 +136,16 @@ function nasaVideo() {
     })
 }
 
+
+
 function planetData(event) {
     console.log(event.target.id)
     let planet= ""
-
-    // if (event.target.id == "earth-1") {
-    //     planet = "earth"
-    // } elsif
-    // }
-
+    const planetC = document.querySelector("#pop")
+    const titlePlanet = document.querySelector(".pop-header")
+    const bodyPlanet = document.querySelector(".pop-body")
+    const closeButton = document.querySelector(".close-button")
+    console.log(planetC)
     switch(event.target.id) {
         case "mercury-1": 
         planet = "mercury";
@@ -184,6 +175,10 @@ function planetData(event) {
         planet = "uranus";
         break;
 
+        case "neptune-1": 
+        planet = "neptune";
+        break;
+
         case "pluto-1": 
         planet = "pluto";
         break;
@@ -193,7 +188,39 @@ function planetData(event) {
         .then(response => response.json())
         .then(result => { 
             console.log(result)
+            planetC.style.transform = "scale(1)"
 
+            const name = document.createElement("div")
+            name.innerText = `PLANET: ${result.englishName}`
+            titlePlanet.appendChild(name)
 
+            const density = document.createElement("div")
+            density.innerText = `DENSITY: ${result.density}`
+
+            const eccentricity = document.createElement("div")
+            eccentricity.innerText = `ECCENTRICITY: ${result.eccentricity}`
+            
+            const equaRadius = document.createElement("div")
+            equaRadius.innerText = `EQUARADIUS: ${result.equaRadius}`
+
+            const escape = document.createElement("div")
+            escape.innerText = `ESCAPE VELOCITY: ${result.escape}`
+
+            const gravity = document.createElement("div")
+            gravity.innerText = `GRAVITY: ${result.gravity}`
+
+            const inclination = document.createElement("div")
+            inclination.innerText = `INCLINATION: ${result.inclination}`
+
+            const mass = document.createElement("div")
+            mass.innerText = `MASS: ${result.mass.massValue}*${result.mass.massExponent}`
+
+            const meanRadius = document.createElement("div")
+            meanRadius.innerText = `MEAN RADIUS: ${result.meanRadius}`
+
+            const moon = document.createElement("div")
+            moon.innerText = `NUMBER OF MOON: ${result.moons.length}`
+
+            bodyPlanet.append(density, eccentricity, equaRadius, escape, gravity, inclination, mass, meanRadius, moon)
         })
     }
