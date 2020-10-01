@@ -5,11 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script defer src="index.js"></script>
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Index Page!</title>
 </head>
 <body>
+
+    <nav id="navigationBar">
+        <ul class="active">
+            <li><i class="fa fa-home" aria-hidden="true"></i>HOME </li>
+            <li> <i class="fa fa-user-circle-o" aria-hidden="true"></i>PROFILE </li>
+            <li> <i class="fa fa-user-plus" aria-hidden="true"></i>SIGN UP </li>
+            <li><i class="fa fa-sign-in" aria-hidden="true"></i>SIGN IN </li>   
+        </ul>
+        <ul class="sign-up">
+            <li>LOG OUT</li>
+        </ul>
+    </nav>
+    <p>THIS IS SKYGAZER HOMEPAGE!</p>
    
-    <form id="new-account">
+    <!-- <form id="new-account">
         <h1>Sign Up</h1>
         <input name="name" type="text" placeholder="name"/>
         <input name="username" type="text" placeholder="username"/>
@@ -25,7 +39,9 @@
         <input name="username" type="text" placeholder="username"/>
         <input name="password" type="password" placeholder="password"/>
         <button id="login-button">Login</button>  
-    </form>
+    </form> -->
+
+   
    
    <section>
        <div class="star stars">
@@ -43,7 +59,12 @@
        <div class="orbit orbit-earth"></div>
        <div class="planet mars"></div>
        <div class="orbit orbit-mars"></div>
-       <div class="planet jupiter"></div>
+       <div class="planet jupiter">
+        <div class="moon-orbit" id="jupiter-moon1"></div>
+        <div class="moon-orbit" id="jupiter-moon2"></div>
+        <div class="moon-orbit" id="jupiter-moon3"></div>
+        <div class="moon-orbit" id="jupiter-moon4"></div>
+       </div>
        <div class="orbit orbit-jupiter"></div>
        <div class="orbit orbit-asteroid"> </div>
            <div class="orbit asteroid1"></div>
@@ -77,9 +98,16 @@
            <div class="orbit asteroid30"></div>
        <div class="planet saturn"></div>
        <div class="orbit orbit-saturn"></div>
-       <div class="planet uranus"></div>
+       <div class="planet uranus">
+        <div class="moon-orbit" id="uranus-moon1"></div>
+        <div class="moon-orbit" id="uranus-moon2"></div>
+        <div class="moon-orbit" id="uranus-moon3"></div>
+       </div>
        <div class="orbit orbit-uranus"></div>
-       <div class="planet neptune"></div>
+       <div class="planet neptune">
+        <div class="moon-orbit" id="neptune-moon1"></div>
+        <div class="moon-orbit" id="neptune-moon2"></div>
+       </div>
        <div class="orbit orbit-neptune"></div>
        <div class="planet pluto"></div>
        <div class="orbit orbit-pluto"></div>

@@ -3,7 +3,54 @@ body {
     background: radial-gradient(#202224 0%, black 100%);
     background-attachment:fixed;
 }
+* {
+    padding: 0;
+    margin: 0;
+}
 
+@font-face {
+    font-family: De-Valencia;
+    src: url(/De-Valencia.otf);
+}
+
+nav {
+    /* background: #888E96; */
+    text-align: left;
+    font-family: De-Valencia;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav#navigationBar ul {
+    display: inline-flex;
+    list-style: none;
+    color: White;
+}
+
+.sign-up {
+    display: inline-flex;
+    list-style: none;
+    color: White;
+}
+
+
+nav#navigationBar ul li {
+    width: 120px;
+    margin: 5px;
+    padding: 15px;
+}
+
+.active li:hover {
+    background: grey;
+    border-radius: 3px;
+}
+
+.sign-up li:hover {
+    background: grey;
+    border-radius: 3px;
+}
+/* ...................................................................... */
 .planet, .star, .orbit, .moon-orbit{
     position: absolute;
     width: var(--size);
@@ -44,8 +91,38 @@ body {
     /* position: absolute; */
     --size: 3px;
     background: rgb(252, 251, 252);
-    animation: moon .5s infinite linear;
+    animation: moon 1.66s infinite linear;
 }
+
+#jupiter-moon1 {
+    /* position: absolute; */
+    --size: 3px;
+    background: rgb(251, 251, 252);
+    animation: jupiter-moon 1.4s infinite linear;
+}
+
+#jupiter-moon2 {
+    /* position: absolute; */
+    --size: 4px;
+    background: rgb(86, 255, 255);
+    animation: jupiter-moon 1.2s infinite linear;
+}
+
+#jupiter-moon3 {
+    /* position: absolute; */
+    --size: 3px;
+    background: rgb(255, 209, 109);
+    animation: jupiter-moon .8s infinite linear;
+}
+
+#jupiter-moon4 {
+    /* position: absolute; */
+    --size: 2px;
+    background: rgb(255, 209, 109);
+    animation: jupiter-moon 1s infinite linear;
+}
+
+
 
 .mars {
     --size: 7px;
@@ -75,13 +152,48 @@ body {
     border-top: 2px solid white;
     /* border-top: 0; */
     border-radius: 50%;
-    transform: saturn translate(-50%, -50%) rotate(30deg);
+    /* transform: saturn translate(-50%, -50%); */
 }
 
 .uranus {
     --size: 14px;
     background: rgb(124, 198, 244);
     animation: uranus 1680s infinite linear;
+}
+
+#uranus-moon1 {
+    /* position: absolute; */
+    --size: 2px;
+    background: rgb(251, 251, 252);
+    animation: uranus-moon .7s infinite linear;
+}
+
+#uranus-moon2 {
+    /* position: absolute; */
+    --size: 1.5px;
+    background: rgb(86, 255, 255);
+    animation: uranus-moon .8s infinite linear;
+}
+
+#uranus-moon3 {
+    /* position: absolute; */
+    --size: 2px;
+    background: rgb(255, 209, 109);
+    animation: uranus-moon .9s infinite linear;
+}
+
+#neptune-moon1 {
+    /* position: absolute; */
+    --size: 2px;
+    background: rgb(255, 209, 109);
+    animation: neptune-moon 1.2s infinite linear;
+}
+
+#neptune-moon2 {
+    /* position: absolute; */
+    --size: 2px;
+    background: rgb(249, 41, 41);
+    animation: neptune-moon 1.5s infinite linear;
 }
 
 .neptune {
@@ -495,10 +607,10 @@ body {
 }
 @keyframes moon {
     from {
-        transform: rotate(0) translateX(10px)
+        transform: rotate(0) translateX(9px)
     }
     to {
-        transform: rotate(-360deg) translateX(10px)
+        transform: rotate(-360deg) translateX(9px)
     }
 }
 
@@ -520,6 +632,15 @@ body {
     }
 }
 
+@keyframes jupiter-moon {
+    from {
+        transform: rotate(0) translateX(17px)
+    }
+    to {
+        transform: rotate(-360deg) translateX(17px)
+    }
+}
+
 @keyframes saturn {
     from {
         transform: rotate(0) translateX(220px)
@@ -538,12 +659,30 @@ body {
     }
 }
 
+@keyframes uranus-moon {
+    from {
+        transform: rotate(0) translateX(12px)
+    }
+    to {
+        transform: rotate(-360deg) translateX(12px)
+    }
+}
+
 @keyframes neptune {
     from {
         transform: rotate(0) translateX(315px)
     }
     to {
         transform: rotate(-360deg) translateX(315px)
+    }
+}
+
+@keyframes neptune-moon {
+    from {
+        transform: rotate(0) translateX(10px)
+    }
+    to {
+        transform: rotate(-360deg) translateX(10px)
     }
 }
 
