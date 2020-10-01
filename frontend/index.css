@@ -4,7 +4,7 @@ body {
     background-attachment:fixed;
 }
 
-.planet, .star, .orbit{
+.planet, .star, .orbit, .moon-orbit{
     position: absolute;
     width: var(--size);
     height: var(--size);
@@ -17,45 +17,52 @@ body {
     --size: 50px;
     background: linear-gradient(#d02411 0%, yellow 60%, #d05a11 100% );
     box-shadow: 0 0 25px rgba(255, 255, 0, 0.482);
-    animation: sun 2s infinite linear;
+    animation: sun 3s infinite linear;
 }
 
 
 
 .mercury {
     --size: 4px;
-    background: rgb(59, 159, 152);
-    animation: mercury 7.2s infinite linear;
+    background: rgb(86, 242, 232);
+    animation: mercury 4s infinite linear;
 }
 
 .venus {
     --size: 9px;
-    background: orangered;
-    animation: venus 18.67s infinite linear;
+    background: rgb(249, 217, 205);
+    animation: venus 12s infinite linear;
 }
 
 .earth {
     --size: 10px;
     background: cornflowerblue;
-    animation: earth 30s infinite linear;
+    animation: earth 20s infinite linear;
+}
+
+#moon {
+    /* position: absolute; */
+    --size: 3px;
+    background: rgb(252, 251, 252);
+    animation: moon .5s infinite linear;
 }
 
 .mars {
     --size: 7px;
     background: crimson;
-    animation: mars 56.4s infinite linear;
+    animation: mars 38s infinite linear;
 }
 
 .jupiter {
     --size: 25px;
     background: linear-gradient(#f7f5f5 0%, brown 60%, #d3936c 80%, white 80% );
-    animation: jupiter 355.8s infinite linear;
+    animation: jupiter 237s infinite linear;
 }
 
 .saturn {
     --size: 20px;
     background: peru;
-    animation: saturn 883.5s infinite linear;
+    animation: saturn 591s infinite linear;
 }
 
 .saturn::after {
@@ -74,21 +81,21 @@ body {
 .uranus {
     --size: 14px;
     background: rgb(124, 198, 244);
-    animation: uranus 4943.7s infinite linear;
+    animation: uranus 1680s infinite linear;
 }
 
 .neptune {
     --size: 14px;
     background: rgb(37, 67, 157);
-    animation: neptune 4943.7s infinite linear;
+    animation: neptune 3280s infinite linear;
 }
 
 .pluto {
     --size: 4px;
     top: calc(47% - var(--size)/2);
     left: calc(55% - var(--size)/2);
-    background: rgb(254, 228, 145);
-    animation: pluto 7457.7s infinite linear;
+    background: rgb(255, 69, 249);
+    animation: pluto 4996s infinite linear;
 }
 /* .................................................................................................. */
 .asteroid1, .asteroid2, .asteroid3, .asteroid4, .asteroid5, .asteroid6, .asteroid7, .asteroid8, .asteroid9, .asteroid10, .asteroid11, .asteroid12, .asteroid13, .asteroid14, 
@@ -484,6 +491,14 @@ body {
     }
     to {
         transform: rotate(-360deg) translateX(72.5px)
+    }
+}
+@keyframes moon {
+    from {
+        transform: rotate(0) translateX(10px)
+    }
+    to {
+        transform: rotate(-360deg) translateX(10px)
     }
 }
 
