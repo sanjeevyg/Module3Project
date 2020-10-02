@@ -40,6 +40,7 @@ const nasaBaseURL = "https://api.nasa.gov/planetary/apod?api_key="
 
 const baseURL = "http://localhost:3000"
 let token = localStorage.token
+console.log(token)
 
 signUpForm.addEventListener("submit", signUp)
 loginButton.addEventListener("click", login)
@@ -71,11 +72,40 @@ const closeButton = document.querySelector(".fa-window-close-o")
 nasaVideo()
 
 if(token) {
-    // authorizeUser(token)
     removeNavElement()
 } else {
     showNavElement()
 }
+// .........................................................................................
+const profilePopUpTab = document.querySelector("#log-in-popup") 
+const profileTab = document.querySelector("#profile-tab") 
+
+
+profileTab.addEventListener("click", handleProfile)
+
+function handleProfile() {
+    if (!token) {
+        profilePopUpTab.style.transform = "scale(1)"    
+        profilePopUpTab.addEventListener("click", removePopUP)       
+    } else {
+        fetch(`${baseURL}/profiles`)
+        .then(response => response.json())
+        .then(profiles => {
+            profiles.map(profile => {console.log(profile)
+                
+                window.location.replace(`http://localhost:3001/profile.html`)
+            })
+    })}
+}
+
+
+function removePopUP() {
+    profilePopUpTab.style.transform = "scale(0)"
+}
+
+
+// ...........................................................................................
+
 
 
 function removeNavElement() {
@@ -138,6 +168,7 @@ function login(event) {
         username: username, 
         password: password
     }
+    // location.reload()
 
     fetch(`${baseURL}/login`, {
         method: "POST", 
@@ -366,3 +397,4 @@ function getPlanetInfo(planet) {
         }
     })
 }
+
