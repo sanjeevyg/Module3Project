@@ -4,6 +4,7 @@ searchPlanetForm.addEventListener("submit", searchPlanet)
 const signUpForm = document.querySelector("#new-account")
 const loginForm = document.querySelector("#login-user")
 const loginButton = document.querySelector("#login-button")
+const signOutButton = document.querySelector("#sign-out-form")
 
 const mercuryButton = document.querySelector(".mercury")
 const venusButton = document.querySelector(".venus")
@@ -36,13 +37,14 @@ const errorImageURL = "https://www.universetoday.com/wp-content/uploads/2013/10/
 const planetBaseURL = "https://api.le-systeme-solaire.net/rest/bodies"
 const nasaBaseURL = "https://api.nasa.gov/planetary/apod?api_key="
 
-let address = "colorado"
 
 const baseURL = "http://localhost:3000"
 let token = localStorage.token
 
-// signUpForm.addEventListener("submit", signUp)
-// loginButton.addEventListener("click", login)
+signUpForm.addEventListener("submit", signUp)
+loginButton.addEventListener("click", login)
+signOutButton.addEventListener("click", logout)
+
 mercuryButton.addEventListener("click",  planetData)
 venusButton.addEventListener("click",  planetData)
 earthButton.addEventListener("click",  planetData)
@@ -67,13 +69,39 @@ plutoButton1.addEventListener("click",  planetData)
 const closeButton = document.querySelector(".fa-window-close-o")
 
 nasaVideo()
-riseFallData()
-planetData()
-searchPlanet()
 
 if(token) {
-    authorizeUser(token)
+    // authorizeUser(token)
+    removeNavElement()
+} else {
+    showNavElement()
 }
+
+
+function removeNavElement() {
+    const signUpList = document.querySelector("#sign-up-list")
+    const logInList = document.querySelector("#login-list")
+    const contact = document.querySelector("#contact")
+    // const contact = document.querySelector("#contact")
+    
+    signUpList.style.transform = "scale(0)"
+    logInList.style.transform = "scale(0)"
+    contact.style.transform = "scale(0)"
+    signOutButton.style.transform = "scale(1)"
+}
+
+function showNavElement() {
+    const signUpList = document.querySelector("#sign-up-list")
+    const logInList = document.querySelector("#login-list")
+    const contact = document.querySelector("#contact")
+
+    signUpList.style.transform = "scale(1)"
+    logInList.style.transform = "scale(1)"
+    contact.style.transform = "scale(1)"
+    signOutButton.style.transform = "scale(0)"
+}
+
+
 
 function signUp(event) {
     event.preventDefault()
@@ -101,6 +129,7 @@ function signUp(event) {
 
 function login(event) {
     event.preventDefault()
+    removeNavElement()
 
     const formData = new FormData(loginForm)
     const username = formData.get("username")
@@ -122,27 +151,23 @@ function login(event) {
     })   
 }
 
-function authorizeUser(token) {
-    fetch(`${baseURL}/profile`, {
-        method: "GET",
-        headers: {
-            "content-type": "application/json",
-            "Authorization": `Bearer ${token}`
-        }
-    }).then(response => response.json())
-    .then(console.log)
-}
+// function authorizeUser(token) {
+//     fetch(`${baseURL}/profile`, {
+//         method: "GET",
+//         headers: {
+//             "content-type": "application/json",
+//             "Authorization": `Bearer ${token}`
+//         }
+//     }).then(response => response.json())
+//     .then(console.log)
+// }
 
 function logout() {
     localStorage.removeItem("token")
+    showNavElement()
 }
 
 
-function riseFallData() {
-    fetch(`https://api.ipgeolocation.io/astronomy?apiKey=${astroApiKey}&location=${address}`)
-        .then(response => response.json())
-        .then(result => console.log(result))
-}
 
 
 function nasaVideo() {
@@ -166,7 +191,7 @@ function nasaVideo() {
                 image.src = result.url
                 div.innerText = "IMAGE OF THE DAY"
                 div.classList.add("nasa-image")
-                
+
                 nasaLink.append(image, div)
             } else {
                 console.log(result)
@@ -320,8 +345,7 @@ function getPlanetInfo(planet) {
             moon.innerText == "NUMBER OF MOONS: 0"
         } else {
             moon.innerText = `NUMBER OF MOONS: ${result.moons.length}`
-        }
-        
+        }    
 
         bodyPlanet.append(density, eccentricity, equaRadius, escape, gravity, inclination, mass, meanRadius, moon)
 

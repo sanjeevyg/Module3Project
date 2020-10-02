@@ -15,12 +15,14 @@ body {
 
 nav {
     /* background: #888E96; */
+    position: relative;
     text-align: left;
     font-family: De-Valencia;
     font-size: 20px;
     padding-left: 50px;
     display: flex;
     justify-content: space-between;
+    z-index: 20;
 }
 
 
@@ -76,6 +78,7 @@ nav#navigationBar ul li {
 
 .search-form {
     padding: 17px;
+    padding-right: 40px;
     font-family: De-Valencia;
 }
 
@@ -98,62 +101,99 @@ nav#navigationBar ul li {
      font-size: 23px;
  }
 
- /* ..................................................................... */
-
- .planets-body {
-     display: flex;
-     flex-direction: row;
-     justify-content: space-between;
+ .fa {
+     padding: 5px;
  }
 
- .planet:hover {
-     cursor: pointer;
+.signup-form-container {
+     display: none;
  }
 
- .sun:hover {
+.login-form-container {
+    display: none;
+}
+
+#sign-up-list:hover .signup-form-container {
+    display: block;
+    position: absolute;
+    background: grey;
+ }
+
+ #login-list:hover .login-form-container {
+    display: block;
+    position: absolute;
+    background: grey;
+    transition-delay:1s;
+ }
+
+
+ #sign-up-list:hover .signup-form-container #new-account input {
+     display: block;
+     margin: 30px;
+     z-index: 15;
+     transition-delay:1s;
+ }
+
+ #login-list:hover .login-form-container #login-user input {
+    display: block;
+    margin: 30px;
+    z-index: 15;
+    transition-delay:1s;
+}
+
+#login-list:hover .login-form-container #login-user button {
+    display: block;
+    margin: 30px;
+    z-index: 15;
+    transition-delay:1s;
+}
+
+/* ..................................................................... */
+.planets-body {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.planet:hover {
     cursor: pointer;
- }
-
- .planet-info {
-    margin-top: 170px;
-    font-family: De-Valencia;
-    font-size: 30px;
-    color: white;
-    width: 300px;
-    margin-right: 0px;
-    padding-right: 40px;
- }
-
- .pop-up {
-     position: fixed;
-     z-index: 10;
-     /* background: grey; */
-     transform: scale(0);
- }
-
- .pop-header {
-     display: flex;
-     justify-content: space-between;
-     /* align-items: center; */
-     padding-bottom: 20px;
- }
-
- .pop-body {
-     font-size: 20px;
- }
-
- .pop-body div {
+}
+.sun:hover {
+   cursor: pointer;
+}
+.planet-info {
+   margin-top: 170px;
+   font-family: De-Valencia;
+   font-size: 30px;
+   color: white;
+   width: 300px;
+   margin-right: 0px;
+   padding-right: 40px;
+}
+.pop-up {
+    position: fixed;
+    z-index: 10;
+    /* background: grey; */
+    transform: scale(0);
+}
+.pop-header {
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+    padding-bottom: 20px;
+}
+.pop-body {
+    font-size: 20px;
+}
+.pop-body div {
     padding: 10px;
 }
 
-
- .close-button {
-     cursor: pointer;
- }
-
- .nasa-image {
-     padding: 5px;
- }
+.close-button {
+    cursor: pointer;
+}
+.nasa-image {
+    padding: 5px;
+}
 
 /* ...................................................................... */
 
@@ -172,7 +212,7 @@ nav#navigationBar ul li {
     flex-direction: row;
     margin-left: 60px;
     justify-content: center;
-    padding-top: 250px;
+    padding-top: 200px;
     font-size: 15px
 }
 
