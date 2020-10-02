@@ -17,34 +17,57 @@
             <li> <i class="fa fa-user-plus" aria-hidden="true"></i>SIGN UP </li>
             <li><i class="fa fa-sign-in" aria-hidden="true"></i>SIGN IN </li>   
             <li><i class="fa fa-compress" aria-hidden="true"></i>CONTACT </li>   
+              
         </ul>
         <ul class="sign-up">
+            <form class="search-form">
+                <input name="search" placeholder="Search Planets">
+                <input type="submit" value="Submit">
+            </form>
             <li>LOG OUT</li>
         </ul>
     </nav>
-
-    <section class="planets-body">
-        <section class="introduction">
-            <h1>WELCOME TO SKYGAZER HOMEPAGE!</h1>
-            <br>
-            <p>The San Diego Loyal walked off the field in protest Wednesday night, saying a Phoenix Rising player used an anti-gay slur directed at midfielder Collin Martin in the first half of their USL Championship match.
-            </p>
-
-            <br>
-            <div id="nasa-daily-video"></div>
-        </section>
-
-        
-        <section class="planet-info">
-            <div class="pop-up" id="pop">
-                <div class="pop-header">
-                    <div class="title"></div>
-                    <div class="close-button"><i class="fa fa-window-close-o" aria-hidden="true"></i></div>
-                </div>
+    <section class="body-frame">
+        <section class="planets-body">
+            <section class="introduction">
+                <h1>WELCOME TO SKYGAZER HOMEPAGE!</h1>
                 <br>
-                <div class="pop-body"></div>
-            </div>       
+                <p>The San Diego Loyal walked off the field in protest Wednesday night, saying a Phoenix Rising player used an anti-gay slur directed at midfielder Collin Martin in the first half of their USL Championship match.
+                </p>
+
+                <br>
+                <div id="nasa-daily-video"></div>
+            </section>
+
+            
+            <section class="planet-info">
+                <div class="pop-up" id="pop">
+                    <div class="pop-header">
+                        <div class="title"></div>
+                        <div class="close-button"><i class="fa fa-window-close-o" aria-hidden="true"></i></div>
+                    </div>
+                    <br>
+                    <div class="pop-body"></div>
+                </div>       
+            </section>
+
         </section>
+
+        <seciton class="planet-link">
+            <section id="planet-group-1">
+                <div id="mercury-div">MERCURY</div>
+                <div  id="venus-div">VENUS</div>
+                <div  id="earth-div">EARTH</div>
+                <div id="mars-div">MARS</div>
+                <div id="jupiter-div">JUPIITER</div>
+            </section>
+            <section id="planet-group-2">
+                <div id="saturn-div">SATURN</div>
+                <div  id="uranus-div">URANUS</div>
+                <div  id="neptune-div">NEPTUNE</div>
+                <div id="pluto-div">PLUTO</div>
+            </section>
+        </seciton>
     </section>
 
 
@@ -76,7 +99,7 @@
            <div id="stars1"></div>
            <div id="stars2"></div>
        </div>
-       <div class="star sun"></div>
+       <div class="star sun" id="sun-1"></div>
        <div class="planet mercury" id="mercury-1"></div>
        <div class="orbit orbit-mercury"></div>
        <div class="planet venus" id="venus-1"></div>

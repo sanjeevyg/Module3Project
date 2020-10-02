@@ -29,6 +29,7 @@ nav#navigationBar ul {
     display: inline-flex;
     list-style: none;
     color: White;
+    cursor: pointer;
 }
 
 #home {
@@ -66,14 +67,17 @@ nav#navigationBar ul li {
     font-family: De-Valencia;
     font-size: 15px;
     padding-left: 20px;
-    margin-top: 100px;
+    margin-top: 70px;
     width: 400px;
     display: inline-block;
     padding-left: 60px;
     color: white;
-    /* justify-content: space-between; */
 }
 
+.search-form {
+    padding: 17px;
+    font-family: De-Valencia;
+}
 
  #nasa-daily-video img {
      margin-top: 30px;
@@ -82,6 +86,13 @@ nav#navigationBar ul li {
      border: 1px solid rgb(225, 211, 211);
      box-shadow: 0 0 10px 0px rgba(126, 117, 117, 0.5)
  }
+
+ #nasa-daily-video {
+     display: inline-block;
+     color: white;
+     text-align: center;
+     font-size: 10px;
+}
 
  .introduction h1 {
      font-size: 23px;
@@ -95,8 +106,16 @@ nav#navigationBar ul li {
      justify-content: space-between;
  }
 
+ .planet:hover {
+     cursor: pointer;
+ }
+
+ .sun:hover {
+    cursor: pointer;
+ }
+
  .planet-info {
-    margin-top: 100px;
+    margin-top: 170px;
     font-family: De-Valencia;
     font-size: 30px;
     color: white;
@@ -116,7 +135,7 @@ nav#navigationBar ul li {
      display: flex;
      justify-content: space-between;
      /* align-items: center; */
-     padding-bottom: 60px;
+     padding-bottom: 20px;
  }
 
  .pop-body {
@@ -132,7 +151,60 @@ nav#navigationBar ul li {
      cursor: pointer;
  }
 
-        
+/* ...................................................................... */
+
+.body-frame {
+    display: flex;
+    flex-direction: column;
+}
+
+.planet-link {
+    font-family: De-Valencia;
+    display: flex;
+    /* background: white; */
+    color: white; 
+    width: 400px;
+    flex-direction: column;
+    margin-left: 60px;
+    justify-content: space-between;
+    padding-top: 40px;
+    font-size: 15px
+}
+
+#planet-group-1 {
+padding-bottom: 20px;
+text-align: left;
+    /* padding-right: 130px; */
+    /* border-right: 2px solid white; */
+}
+
+#planet-group-1 div {
+    padding: 5px;
+    padding-left: 0px;
+    display: inline-block;
+}
+
+#planet-group-2 {
+    padding-left: 0px;
+    margin-right: 0px;
+    text-align: left;
+}
+
+#planet-group-2 div {
+    padding: 5px;
+    padding-left: 0px;
+    display: inline-block;
+}
+
+#planet-group-1 div:hover {
+    font-size: 20px;
+    cursor: pointer; 
+}
+
+#planet-group-2 div:hover {
+    font-size: 20px;
+    cursor: pointer; 
+}
  
 /* ...................................................................... */
 .planet, .star, .orbit, .moon-orbit{
