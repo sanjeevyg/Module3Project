@@ -155,14 +155,19 @@ function nasaVideo() {
 
                 image.src = errorImageURL
                 div.innerText = "IMAGE OF THE DAY"
+                div.classList.add("nasa-image")
                 
-               
                 nasaLink.append(image, div)
                 
             } else if (result.media_type == "image") {
                 const image = document.createElement("img")
+                const div = document.createElement("div")
+
                 image.src = result.url
-                nasaLink.appendChild(image)
+                div.innerText = "IMAGE OF THE DAY"
+                div.classList.add("nasa-image")
+                
+                nasaLink.append(image, div)
             } else {
                 console.log(result)
                 const video = document.createElement("iframe")
@@ -260,10 +265,6 @@ function planetData(event) {
     }
     getPlanetInfo(planet)  
 }
-
-
-
-
 
 function searchPlanet(event){
     event.preventDefault()

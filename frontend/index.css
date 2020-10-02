@@ -67,7 +67,7 @@ nav#navigationBar ul li {
     font-family: De-Valencia;
     font-size: 15px;
     padding-left: 20px;
-    margin-top: 70px;
+    margin-top: 120px;
     width: 400px;
     display: inline-block;
     padding-left: 60px;
@@ -151,6 +151,10 @@ nav#navigationBar ul li {
      cursor: pointer;
  }
 
+ .nasa-image {
+     padding: 5px;
+ }
+
 /* ...................................................................... */
 
 .body-frame {
@@ -159,32 +163,35 @@ nav#navigationBar ul li {
 }
 
 .planet-link {
+    position: static;
     font-family: De-Valencia;
     display: flex;
-    /* background: white; */
+    /* background: red; */
     color: white; 
-    width: 400px;
-    flex-direction: column;
+    /* width: 400px; */
+    flex-direction: row;
     margin-left: 60px;
-    justify-content: space-between;
-    padding-top: 40px;
+    justify-content: center;
+    padding-top: 250px;
     font-size: 15px
 }
 
 #planet-group-1 {
 padding-bottom: 20px;
+padding-top: 0px;
+margin-top: 0px;
 text-align: left;
     /* padding-right: 130px; */
     /* border-right: 2px solid white; */
 }
 
 #planet-group-1 div {
-    padding: 5px;
+    padding: 20px;
     padding-left: 0px;
     display: inline-block;
 }
 
-#planet-group-2 {
+/* #planet-group-2 {
     padding-left: 0px;
     margin-right: 0px;
     text-align: left;
@@ -194,17 +201,17 @@ text-align: left;
     padding: 5px;
     padding-left: 0px;
     display: inline-block;
-}
+} */
 
 #planet-group-1 div:hover {
-    font-size: 20px;
+    font-size: 25px;
     cursor: pointer; 
 }
 
-#planet-group-2 div:hover {
-    font-size: 20px;
+/* #planet-group-2 div:hover {
+    font-size: 25px;
     cursor: pointer; 
-}
+} */
  
 /* ...................................................................... */
 .planet, .star, .orbit, .moon-orbit{
@@ -232,8 +239,6 @@ text-align: left;
     z-index: -1;
 }
 
-
-
 .mercury {
     --size: 4px;
     background: rgb(86, 242, 232);
@@ -257,6 +262,32 @@ text-align: left;
     --size: 3px;
     background: rgb(252, 251, 252);
     animation: moon 1.66s infinite linear;
+}
+
+.mars {
+    --size: 7px;
+    background: crimson;
+    animation: mars 38s infinite linear;
+}
+
+#mars-moon1 {
+    /* position: absolute; */
+    --size: 2px;
+    background: rgb(252, 251, 252);
+    animation: mars-moon 1.66s infinite linear;
+}
+
+#mars-moon2 {
+    /* position: absolute; */
+    --size: 2px;
+    background: rgb(185, 103, 52);
+    animation: mars-moon 1.2s infinite linear;
+}
+
+.jupiter {
+    --size: 25px;
+    background: linear-gradient(#f7f5f5 0%, brown 60%, #d3936c 80%, white 80% );
+    animation: jupiter 237s infinite linear;
 }
 
 #jupiter-moon1 {
@@ -287,19 +318,6 @@ text-align: left;
     animation: jupiter-moon 1s infinite linear;
 }
 
-
-
-.mars {
-    --size: 7px;
-    background: crimson;
-    animation: mars 38s infinite linear;
-}
-
-.jupiter {
-    --size: 25px;
-    background: linear-gradient(#f7f5f5 0%, brown 60%, #d3936c 80%, white 80% );
-    animation: jupiter 237s infinite linear;
-}
 
 .saturn {
     --size: 20px;
@@ -785,6 +803,15 @@ text-align: left;
     }
     to {
         transform: rotate(-360deg) translateX(95px)
+    }
+}
+
+@keyframes mars-moon {
+    from {
+        transform: rotate(0) translateX(7px)
+    }
+    to {
+        transform: rotate(-360deg) translateX(7px)
     }
 }
 
