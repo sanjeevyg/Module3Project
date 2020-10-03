@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-
     before_action :authenticate, only: [:profile, :profile_by_username]
+
     def index 
         @users = User.all 
         render json: @users 
@@ -11,14 +11,14 @@ class UsersController < ApplicationController
         render json: @user
     end
 
-    def profile 
-        render json: @user
-    end
+    # def profile 
+    #     render json: @user
+    # end
 
-    def profile_by_username 
-        @user = User.find_by(username: params[:username])
-        render json: @user
-    end
+    # def profile_by_username 
+    #     @user = User.find_by(username: params[:username])
+    #     render json: @user
+    # end
 
     def create 
         @user = User.new(user_params)
